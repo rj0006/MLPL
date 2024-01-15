@@ -1,0 +1,53 @@
+{% extends 'administrations/navbar.html' %}
+{% block start %}
+
+
+<div class="contrainer-fluid">
+    <form id="registrationForm" class="col-12" method="post">
+        {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-12">
+                <b>User/create</b>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+                <a href="/administrations/usersList/"><input type="button" class="btn btn-primary btn-sm"
+                        value="List"></a>
+                <input type="reset" class="btn btn-primary btn-sm" value="Discard">
+            </div>
+        </div>
+        {% if messages %}
+            {{ message.tags }}
+            <div class="alert alert-primary rounded-0 m-2" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">First Name</span>
+                <input type="text" class="form-control-sm form-control" required name="first_name"
+                    onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Last Name</span>
+                <input type="text" class="form-control-sm form-control" name="last_name"
+                    onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Username</span>
+                <input type="text" class="form-control-sm form-control" name="username"
+                onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Password</span>
+                <input type="password" class="form-control-sm form-control" name="password">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
