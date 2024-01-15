@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>{{ page }}</title>
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png">
+    <style>
+        .form-control {
+            box-shadow: none !important;
+            outline: -webkit-focus-ring-color auto 0px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/module"><img src="/static/img/logo.png" alt="logo" width="100" height="30"></a>
+        <div class="row p-1">
+            <div class="m-1">
+                User : {{ request.user.first_name }}
+            </div>
+            <div>
+                <a href="/logout/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="m-5 p-2 shadow-lg bg-white rounded">
+            <a href="/administrations/" class="text-decoration-none">
+                <img class="rounded " src="/static/img/moduleadministration1.jpeg" height="100" width="125"
+                    alt="Administrations">
+                <div class="text-center">
+                    <p class="card-text">Administrations</p>
+                </div>
+            </a>
+        </div>
+        <div class="m-5 p-2 shadow-lg bg-white rounded">
+            <a href="/master/" class="text-decoration-none">
+                <img class="rounded" src="/static/img/modulemaster8.jpeg" height="100" width="125" alt="Master">
+                <div class="text-center">
+                    <p class="card-text">Masters</p>
+                </div>
+            </a>
+        </div>
+        <div class="m-5 p-2 shadow-lg bg-white rounded">
+            <a href="/operation/" class="text-decoration-none">
+                <img class="rounded" src="/static/img/moduleoperation2.jpeg" height="100" width="125" alt="Operations">
+                <div class="text-center">
+                    <p class="card-text">Operations</p>
+                </div>
+            </a>
+        </div>
+        <div class="m-5 p-2 shadow-lg bg-white rounded">
+            <a href="/accounts/" class="text-decoration-none">
+                <img class="rounded" src="/static/img/moduleaccounts5.jpeg" height="100" width="125" alt="Accounts">
+                <div class="text-center">
+                    <p class="card-text">Accounts</p>
+                </div>
+            </a>
+        </div>
+        <div class="m-5 p-2 shadow-lg bg-white rounded">
+            <a href="/operation/" class="text-decoration-none">
+                <img class="rounded" src="/static/img/modulefleetoperation11.jpeg" height="100" width="125" alt="Operations">
+                <div class="text-center">
+                    <p class="card-text">Fleet Operation</p>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
