@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Add/Remove Table Rows with ForeignKey</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <button id="addBtn" class="btn btn-primary">Add New Consignment</button>
+
+    <h2>Consignment and Invoice Details</h2>
+    <table id="mainTable" class="table mt-3">
+        <thead>
+            <tr>
+                <th>Consignment Number</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="mainBody">
+            <!-- One default consignment row -->
+            <tr class="consignmentRow"> 
+                <td>Consignment 1</td> 
+                <td>Date: <input type="date" class="form-control" name="consignmentDate"></td> 
+                <td>
+                    <button class="btn btn-success addInvoice" type="button">Add Invoice</button>
+                </td> 
+                <td> 
+                    <button class="btn btn-danger removeConsignment" type="button">Remove</button> 
+                </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(() => {
+        let consignmentCount = 2;
+
+        // Adding row on click to Add New Consignment button
+        $('#addBtn').click(function () {
+            // Add new consignment row
+            let consignmentRowHTML = `
+            <tr class="consignmentRow"> 
+                <td>Consignment ${consignmentCount}</td> 
+                <td>Date: <input type="date" class="form-control" name="consignmentDate"></td> 
+                <td>
+                    <button class="btn btn-success addInvoice" type="button">Add Invoice</button>
+                </td> 
+                <td> 
+                    <button class="btn btn-danger removeConsignment" type="button">Remove</button> 
+                </td> 
+            </tr>`;
+            $('#mainBody').append(consignmentRowHTML);
+            consignmentCount++;
+
+            // Initialize the invoice counter for the new consignment
+            let invoiceCount = 1;
+
+            // Adding Invoice Row on click to Add Invoice button
+            $('.addInvoice').click(function () {
+                let invoiceRowHTML = `
+                <tr class="invoiceRow"> 
+                    <td>Invoice ${invoiceCount}</td> 
+                    <td>Date: <input type="date" class="form-control" name="invoiceDate"></td> 
+                    <td> 
+                        <button class="btn btn-danger removeInvoice" type="button">Remove</button> 
+                    </td> 
+                </tr>`;
+                $(this).closest('tr.consignmentRow').after(`<tr><td colspan="4"><table class="table mt-2">${invoiceRowHTML}</table></td></tr>`);
+                invoiceCount++;
+            });
+
+            // Removing Consignment Row on click to Remove button
+            $('.removeConsignment').click(function () {
+                $(this).closest('tr.consignmentRow').remove();
+            });
+
+            // Removing Invoice Row on click to Remove button
+            $('.invoiceBody').on('click', '.removeInvoice', function () {
+                $(this).closest('tr.invoiceRow').remove();
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

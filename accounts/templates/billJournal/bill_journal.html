@@ -1,0 +1,97 @@
+{% extends 'accounts/navbar.html' %}
+{% block start %}
+
+
+<div class="contrainer-fluid">
+    <form class="col-12" method="post">
+        {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-12">
+                <b>Party/create</b>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+                <a href="/accounts/bill-journal-list/"><input type="button" class="btn btn-primary btn-sm" value="List"></a>
+                <input type="reset" class="btn btn-primary btn-sm" value="Discard">
+            </div>
+        </div>
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Voucher Type</span>
+                <select type="text" class="form-control-sm form-control" required name="vouchertype">
+                    <option value="">Select</option>
+                    <option value="Bill Journal" selected>Bill Journal</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Type</span>
+                <select type="text" class="form-control-sm form-control" required name="type">
+                    <option value="">Select</option>
+                    <option value="MAIN" selected>MAIN</option>
+                    <option value="RETURN">RETURN</option>
+                    <option value="SALARY">SALARY</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Party Name</span>
+                <input type="text" class="form-control-sm form-control" name="partyname">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">GSTIN</span>
+                <input type="text" class="form-control-sm form-control" disabled name="gstin">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Voucher No.</span>
+                <input type="text" class="form-control-sm form-control" disabled name="voucherno">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Date</span>
+                <input type="date" class="form-control-sm form-control" name="date">
+            </div>
+
+            <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                <div class="col-6 col-sm-6 col-md-6">
+                    <span class="col-form-label-sm">State</span>
+                    <select type="text" class="form-control-sm form-control" name="state">
+                        <option value="">Select</option>
+                        <option value="Haryana">Haryana</option>
+                    </select>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6">
+                    <span class="col-form-label-sm">POS</span>
+                    <select type="text" class="form-control-sm form-control" name="pos">
+                        <option value="">Select</option>
+                        <option value="Haryana">Haryana</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Invoice No</span>
+                <input type="text" class="form-control-sm form-control" name="invoiceno">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Invoice Date</span>
+                <input type="date" class="form-control-sm form-control" name="invoicedate">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Controlling Branch</span>
+                <input type="text" class="form-control-sm form-control" name="controllingbranch">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Parent Account</span>
+                <input type="text" class="form-control-sm form-control" name="parentaccount">
+            </div>
+
+
+            <div class="mt-3 col-12 col-sm-12 col-md-12">
+                <b>Contact</b>
+                <hr class="m-0">
+            </div>
+            
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

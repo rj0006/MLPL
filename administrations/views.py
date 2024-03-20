@@ -12,7 +12,7 @@ def navbar(request):
     context = {'page':'Administrations'}
     return render(request, 'administrations/navbar.html', context)
 
-@login_required(login_url='/')
+# @login_required(login_url='/')
 def users(request):
     userPage = {'page':'User Master'}
 
@@ -50,7 +50,7 @@ def users(request):
 
     return render(request, 'securityManager/users.html', context)
 
-@login_required(login_url='/')
+# @login_required(login_url='/')
 def usersList(request):
     items_per_page = 5
     queryset = User.objects.order_by('id')

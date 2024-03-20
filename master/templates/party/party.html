@@ -1,0 +1,223 @@
+{% extends 'navbar.html' %}
+{% block start %}
+
+<div class="contrainer-fluid">
+    <form class="col-12" method="post">
+        {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-12">
+                <b>Party/create</b>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+                <a href="/master/partylist/"><input type="button" class="btn btn-primary btn-sm" value="List"></a>
+                <input type="reset" class="btn btn-primary btn-sm" value="Discard">
+            </div>
+        </div>
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Party Type</span>
+                <select type="text" class="form-control-sm form-control" required name="partytype">
+                    <option value="">Select</option>
+                    <option value="Agent">AGENT</option>
+                    <option value="Vendor">VENDOR</option>
+                    <option value="Customer">CUSTOMER</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Code</span>
+                <input type="text" class="form-control-sm form-control" name="code">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Group</span>
+                <input type="text" class="form-control-sm form-control" name="group">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Expense Type</span>
+                <input type="text" class="form-control-sm form-control" name="expensetype">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-6">
+                <span class="col-form-label-sm">Party Name</span>
+                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toUpperCase();" name="partyname">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Controlling Branch</span>
+                <input type="text" class="form-control-sm form-control" name="controllingbranch">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Parent Account</span>
+                <input type="text" class="form-control-sm form-control" name="parentaccount">
+            </div>
+
+
+            <div class="mt-3 col-12 col-sm-12 col-md-12">
+                <b>Contact</b>
+                <hr class="m-0">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Address</span>
+                <input type="text" class="form-control-sm form-control" name="address">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">City</span>
+                <input type="text" class="form-control-sm form-control" name="city">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">State</span>
+                <input type="text" class="form-control-sm form-control" name="state">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">PIN</span>
+                <input type="text" class="form-control-sm form-control" maxlength="6" name="pin">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Country</span>
+                <input type="text" class="form-control-sm form-control" name="country">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Contact Person</span>
+                <input type="text" class="form-control-sm form-control" name="contactperson">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Mobile</span>
+                <input type="text" class="form-control-sm form-control" maxlength="10" name="mobilenumber">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Email</span>
+                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toLowerCase();" name="email">
+            </div>
+
+            <div class="mt-3 col-12 col-sm-12 col-md-12">
+                <b>MLPL Cordinator Contact</b>
+                <hr class="m-0">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Name</span>
+                <input type="text" class="form-control-sm form-control" id="nameco" onkeyup="this.value = this.value.toUpperCase();" name="nameco">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Mobile</span>
+                <input type="text" class="form-control-sm form-control" maxlength="10" name="mobileco">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Department</span>
+                <input type="text" class="form-control-sm form-control" name="departmentco">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Branch</span>
+                <input type="text" class="form-control-sm form-control" name="branchco">
+            </div>
+
+            <div class="mt-3 col-12 col-sm-12 col-md-12">
+                <b>GST</b>
+                <hr class="m-0">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Registration Type</span>
+                <select type="text" class="form-control-sm form-control" name="registrationtype">
+                    <option value="">Select</option>
+                    <option value="Registered-Regular">Registered-Regular</option>
+                    <option value="Unregistered">Unregistered</option>
+                    <option value="Consumer">Consumer</option>
+                    <option value="SEZ Without Payment">SEZ Without Payment</option>
+                    <option value="UIN Holder">UIN Holder</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Service Type</span>
+                <select type="text" class="form-control-sm form-control" name="servicetype">
+                    <option value="">Select</option>
+                    <option value="GOODS">GOODS</option>
+                    <option value="SERVICE">SERVICE</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-6 row">
+                <div class="m-0 pl-0 col-6 col-sm-6 col-md-6">
+                    <span class="col-form-label-sm">GSTIN</span>
+                    <input type="text" class="form-control-sm form-control text-uppercase" maxlength="15" name="gstin"
+                    onkeyup="this.value = this.value.toUpperCase();">
+                </div>
+                <div class="m-0 pr-0 pt-4 col-6 col-sm-6 col-md-6">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="gstinverify">
+                    <label class="col-form-label-sm" for="flexCheckDefault">I have verified the GSTIN from site</label>
+                </div>
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">PAN</span>
+                <input type="text" class="form-control-sm form-control text-uppercase" maxlength="10" name="pan"
+                    pattern="[A-Za-z0-9]+" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">TDS Deducation</span>
+                <input type="number" class="form-control-sm form-control" name="tdsdeducation">
+            </div>
+
+            <div class="form-group m-0 col-12 col-sm-6 col-md-6 row">
+                <div class="m-0 pl-0 col-6 col-sm-6 col-md-6">
+                    <span class="col-form-label-sm">Turnover over 5 CR any financial</span>
+                <select type="text" class="form-control-sm form-control" name="turnoverfivecr">
+                    <option value="">Select</option>
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                </select>
+                </div>
+                <div class="m-0 pr-0 pt-4 col-6 col-sm-6 col-md-6">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" name="declarationsubmit">
+                    <label class="col-form-label-sm" for="flexCheckDefault1">Is Declaraiton Submit</label>
+                </div>
+            </div>
+
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Einvoice Applicable</span>
+                <select type="text" class="form-control-sm form-control" name="einvoiceapli">
+                    <option value="">Select</option>
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Ensure autocompleteResults is defined in a scope accessible to change event
+    var autocompleteResults = [];
+
+    $(function () {
+        $("#nameco").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/administrations/get_party_list/",  // URL to your Django view
+                    data: {
+                        search: request.term
+                    },
+                    success: function (data) {
+                        autocompleteResults = data.payload;
+                        // console.log(autocompleteResults)
+                        response(autocompleteResults.map(item => item.first_name));
+                    }
+                });
+            },
+            minLength: 1,
+            change: function (event, ui) {
+                const inputValue = $(this).val();
+                console.log("inputValue is : " + inputValue)
+                if (!ui.item) {
+                    console.log("ui.item is : " + ui.item)
+                    // The entered value is not match input field with suggestion
+                    console.log("Input value don't match with suggestion");
+                    // Add your validation or other actions here
+                    // Check if inputValue doesn't match with any autocomplete result
+                    if (!autocompleteResults.some(result => result.name === inputValue)) {
+                        console.log("Input value doesn't match with any autocomplete result");
+                        // Clear the input value
+                        $(this).val('');
+                        // Add your validation or other actions here
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+{% endblock %}

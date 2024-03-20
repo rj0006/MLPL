@@ -37,10 +37,10 @@
         <a class="navbar-brand" href="/module"><img src="/static/img/logo.png" alt="logo" width="100" height="30"></a>
         <div class="row p-1">
             <div class="m-1">
-                User : {{ request.user.first_name }}
+                User : {{ request.user.username }}
             </div>
             <div>
-                <a href="/logout/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
+                <a href="/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
             </div>
         </div>
     </nav>
@@ -48,8 +48,7 @@
     <div class="row">
         <div class="m-5 p-2 shadow-lg bg-white rounded">
             <a href="/administrations/" class="text-decoration-none">
-                <img class="rounded " src="/static/img/moduleadministration1.jpeg" height="100" width="125"
-                    alt="Administrations">
+                <img class="rounded " src="/static/img/moduleadministration1.jpeg" height="100" width="125" alt="Administrations">
                 <div class="text-center">
                     <p class="card-text">Administrations</p>
                 </div>
@@ -64,7 +63,7 @@
             </a>
         </div>
         <div class="m-5 p-2 shadow-lg bg-white rounded">
-            <a href="/operation/" class="text-decoration-none">
+            <a href="/operations/" class="text-decoration-none">
                 <img class="rounded" src="/static/img/moduleoperation2.jpeg" height="100" width="125" alt="Operations">
                 <div class="text-center">
                     <p class="card-text">Operations</p>
@@ -81,13 +80,20 @@
         </div>
         <div class="m-5 p-2 shadow-lg bg-white rounded">
             <a href="/operation/" class="text-decoration-none">
-                <img class="rounded" src="/static/img/modulefleetoperation11.jpeg" height="100" width="125" alt="Operations">
+                <img class="rounded" src="/static/img/modulefleetoperation11.jpeg" height="100" width="125" alt="Fleet Operation">
                 <div class="text-center">
                     <p class="card-text">Fleet Operation</p>
                 </div>
             </a>
         </div>
-        
+        <div class="m-5 p-2 shadow-lg bg-white rounded">
+            <a href="/chatApp/" class="text-decoration-none">
+                <img class="rounded" src="/static/img/chat.png" height="100" width="125" alt="Chat">
+                <div class="text-center">
+                    <p class="card-text">Chat App</p>
+                </div>
+            </a>
+        </div>
     </div>
 
 </body>

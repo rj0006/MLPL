@@ -56,16 +56,13 @@
           </div>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li> -->
       </ul>
       <div class="row p-1">
         <div class="m-1">
-          User : {{ request.user.first_name }}
+          User : {{ request.user.username }}
         </div>
         <div>
-          <a href="/logout/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
+          <a href="/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
         </div>
       </div>
     </div>

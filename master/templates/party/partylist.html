@@ -1,0 +1,121 @@
+{% extends 'navbar.html' %}
+{% block start %}
+<div>
+    <div class="container-fluid">
+        <div class="row container-fluid col-12 p-0 m-0 mb-0">
+            <div class="form-group m-0 p-0 col-3 col-sm-6 col-md-9">
+                <a href="/master/party/" class="btn btn-primary btn-sm m-3" type="button">Create</a>
+            </div>
+            <div class="form-group m-0 col-9 col-sm-6 col-md-3">
+                <input type="text" name="search" id="search" class="form-control form-control-sm m-3">
+            </div>
+        </div>
+        <div>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr class="text-sm">
+                            <th scope="col">Name</th>
+                            <th scope="col">ALIAS</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">STATE</th>
+                            <th scope="col">CITY</th>
+                            <th scope="col">MOBILENO</th>
+                            <th scope="col">GSTIN</th>
+                            <th scope="col">ADD USER</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for party in serviceData %}
+                        <tr class="text-sm">
+                            <!-- <td>{{forloop.counter}}</td> -->
+                            <td scope="row">{{party.partyname}}</td>
+                            <td>{{party.code}}</td>
+                            <td>{{party.partytype}}</td>
+                            <td>{{party.state}}</td>
+                            <td>{{party.city}}</td>
+                            <td>{{party.mobilenumber}}</td>
+                            <td>{{party.gstin}}</td>
+                            <td></td>
+                            <td>
+                                <a href="/master/deleteparty/{{party.id}}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/master/updateparty/{{party.id}}" class="btn btn-success btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        No Data Found
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            Data from serviceData.has_previous : {{serviceData.has_previous}} <br>
+            data from serviceData.has_next : {{serviceData.has_next}} <br>
+            Total Showing {{count}} entries <br>
+            serviceData.paginator.page_range : {{serviceData.paginator.page_range}} <br>
+            serviceData.number|add:"-3" : ({{ serviceData.number|add:"-3" }} *and* {{ serviceData.number|add:"3" }}) <br>
+            
+            
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    
+                    <!-- For go to previous page -->
+                    {% if serviceData.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ serviceData.previous_page_number }}" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1" aria-label="First"><span aria-hidden="true">1</span></a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link">1</a>
+                        </li>
+                    {% endif %}
+
+                    <!-- body page -->
+                    {% for num in serviceData.paginator.page_range|slice:'1:-1' %}
+                        {% if num == serviceData.number %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ num }}</span>
+                            </li>
+                        {% elif num > serviceData.number|add:"-3" and num < serviceData.number|add:"3" %} 
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% elif num == serviceData.number|add:"-3" or num == serviceData.number|add:"3" %}
+                            <li class="page-item disabled">
+                                <span class="page-link">...</span>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    
+
+                    <!-- for last page-item -->
+                    {% if serviceData.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ serviceData.paginator.num_pages }}">
+                                <span aria-hidden="true">{{ serviceData.paginator.num_pages }}</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ serviceData.next_page_number }}">Next</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item active">
+                            <a class="page-link">{{ serviceData.paginator.num_pages }}</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}

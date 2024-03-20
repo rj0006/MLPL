@@ -1,0 +1,87 @@
+{% extends 'accounts/navbar.html' %}
+{% block start %}
+<div>
+    <div class="container-fluid">       
+        <div class="row container-fluid col-12 p-0 m-0 mb-0">
+            <div class="form-group m-0 p-0 col-3 col-sm-6 col-md-9">
+                <a href="/accounts/bill-journal/" class="btn btn-primary btn-sm m-3" type="button">Create</a>
+            </div>
+            <div class="form-group m-0 col-9 col-sm-6 col-md-3">
+                <input type="text" name="search" id="search" class="form-control form-control-sm m-3">
+            </div>
+        </div>
+        <div>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr class="text-sm">
+                            <th scope="col">Name</th>
+                            <th scope="col">ALIAS</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">STATE</th>
+                            <th scope="col">CITY</th>
+                            <th scope="col">MOBILENO</th>
+                            <th scope="col">GSTIN</th>
+                            <th scope="col">ADD USER</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for party in serviceData %}
+                        <tr class="text-sm">
+                            <!-- <td>{{forloop.counter}}</td> -->
+                            <td scope="row">{{party.partyname}}</td>
+                            <td>{{party.code}}</td>
+                            <td>{{party.partytype}}</td>
+                            <td>{{party.state}}</td>
+                            <td>{{party.city}}</td>
+                            <td>{{party.mobilenumber}}</td>
+                            <td>{{party.gstin}}</td>
+                            <td></td>
+                            <td>
+                                <a href="/master/deleteparty/{{party.id}}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/master/updateparty/{{party.id}}" class="btn btn-success btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        No Data Found
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            Data from serviceData.has_previous : {{serviceData.has_previous}} <br>
+            data from serviceData.has_next : {{serviceData.has_next}}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    {% if serviceData.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link " href="?page={{ serviceData.previous_page_number }}" tabindex="-1">Previous</a>
+                        </li>
+                        {% else %} 
+                            <li class="page-item disabled">
+                                <a class="page-link">Previous</a>
+                            </li>
+                    {% endif %}
+
+
+                    {% for num in serviceData.paginator.page_range %}
+                        <li class="page-item{% if serviceData.number == num %} active{% endif %}">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% endfor %}
+
+                    {% if serviceData.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ serviceData.next_page_number }}">Next</a>
+                        </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">Next</a>
+                            </li>
+                    {% endif %}
+                </ul>
+            </nav>   
+        </div>
+    </div>
+</div>
+{% endblock %}

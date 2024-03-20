@@ -42,13 +42,13 @@
       <ul class="navbar-nav mr-auto">
         <!-- Start Operations block -->
         <li class="nav-item">
-          <a class="nav-link" href="/module">Operation</a>
+          <a class="nav-link" href="/module">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Collection Challan</a>
+            aria-haspopup="true" aria-expanded="false">Operations</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/accounts/bill-journal">Consignment</a>
+            <a class="dropdown-item" href="/operations/consignment/">Consignment</a>
             <a class="dropdown-item" href="#">Manifest</a>
             <a class="dropdown-item" href="#">Vehicle Hire</a>
           </div>
@@ -62,10 +62,10 @@
     </div>
     <div class="row p-1">
       <div class="m-1">
-          User : {{ request.user.first_name }}
+          User : {{ request.user.username }}
       </div>
       <div>
-          <a href="/logout/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
+          <a href="/"><button class="btn btn-sm btn-primary" type="button">Sign Out</button></a>
       </div>
     </div>
   </nav>
