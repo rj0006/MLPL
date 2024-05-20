@@ -1,0 +1,31 @@
+{% extends 'operation_nav/navbar.html' %}
+{% block start %}
+
+<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+<div class="container-fluid">
+    <form id="getEwaybill" class="col-12" method="post">
+        {% csrf_token %}
+        <div class="col-12">
+            <b>Get E-WAY BILL</b>
+        </div>
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Enter No</span>
+                <input type="text" id="ewayBill" class="form-control-sm form-control" required name="ewayBill">
+            </div>
+            <div class="col-12 mt-2">
+                <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+                <a href="/operations/consignment/">
+                    <input type="button" class="btn btn-primary btn-sm" value="Without Ewaybill">
+                </a>
+                <input type="reset" class="btn btn-primary btn-sm" value="Discard">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+

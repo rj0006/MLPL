@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrollable Table with Bootstrap</title>
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /* Optional: Style for the table */
+    .table th,
+    .table td {
+        padding: 8px;
+    }
+    .eway-bill-input {
+        width: 200px; /* Adjust width as needed */
+    }
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row container-fluid col-12 p-0 m-0 mb-4">            
+        <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+            <span class="col-form-label-sm">Date</span>
+            <input type="date" class="form-control-sm form-control" id="dateInput" name="" value="">
+        </div>
+        <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+            <span class="col-form-label-sm">Consignor</span>
+            <input type="text" class="form-control-sm form-control" required name="consignor" value="{{ item.EWBDetails.fromTrdName }}">
+        </div>
+        <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+            <span class="col-form-label-sm">Consignee</span>
+            <input type="text" class="form-control-sm form-control" name="" value="{{ item.EWBDetails.toTrdName }}">
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

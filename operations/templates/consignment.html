@@ -1,0 +1,472 @@
+{% extends 'operation_nav/navbar.html' %}
+
+{% block start %}
+
+<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+{% for item in data %}
+    <form class="col-12" method="post">
+        {% csrf_token %}
+        <div class="container-fluid">
+            {% if item.EWBDetails %}
+                <div class="row container-fluid col-12 p-0 m-0 mb-4">
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">CN No</span>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 pr-0">
+                                <input type="text" class="form-control-sm form-control" name="VNOPREFIX" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 pl-0">
+                                <input type="text" class="form-control-sm form-control text-right" name="VNOSEQ" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Date</span>
+                        <input type="date" class="form-control-sm form-control" id="dateInput" name="" value="">
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Consignor</span>
+                        <input type="text" class="form-control-sm form-control" required name="consignor" value="{{ item.EWBDetails.fromTrdName }}">
+                    </div>
+                    
+                    <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <span class="col-form-label-sm">Location</span>
+                            <input type="text" class="form-control-sm form-control" value="{{ item.EWBDetails.fromPlace }}">
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <span class="col-form-label-sm">GSTIN</span>
+                            <input type="text" class="form-control-sm form-control" name="" value="{{ item.EWBDetails.fromGstin }}">
+                        </div>
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Source</span>
+                        <input type="text" class="form-control-sm form-control" name="" value="{{ item.EWBDetails.fromPlace }}">
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Destination</span>
+                        <input type="text" class="form-control-sm form-control" name="" value="{{ item.EWBDetails.toPlace }}">
+                    </div>
+
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Consignee</span>
+                        <input type="text" class="form-control-sm form-control" name="" value="{{ item.EWBDetails.toTrdName }}">
+                    </div>
+                    <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <span class="col-form-label-sm">Location</span>
+                            <input type="text" class="form-control-sm form-control" value="{{ item.EWBDetails.toPlace }}">
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <span class="col-form-label-sm">GSTIN</span>
+                            <input type="text" class="form-control-sm form-control" name="" value="{{ item.EWBDetails.toGstin }}">
+                        </div>
+                    </div>
+
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Delivery At</span>
+                        <select type="text" class="form-control-sm form-control" name="">
+                            <option selected value="">Select</option>
+                            <option value="DIRECT">DIRECT</option>
+                            <option value="DOOR TO DOOR">DOOR TO DOOR</option>
+                            <option value="DOOR TO TERMINAL">DOOR TO TERMINAL</option>
+                            <option value="GODOWN">GODOWN</option>
+                            <option value="LOCAL DELIVERY">LOCAL DELIVERY</option>
+                            <option value="TERMINAL TO DOOR">TERMINAL TO DOOR</option>
+                            <option value="TERMINAL TO TERMINAL">TERMINAL TO TERMINAL</option>
+                            <option value="DIRECT">DIRECT</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Vehicle No</span>
+                        <input type="text" class="form-control-sm form-control" name="" value="">
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Billing Party</span>
+                        <input type="text" class="form-control-sm form-control" name="" value="">
+                    </div>
+                    <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <span class="col-form-label-sm">Location</span>
+                            <input type="text" class="form-control-sm form-control" value="">
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <span class="col-form-label-sm">GSTIN</span>
+                            <input type="text" class="form-control-sm form-control" name="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Mode</span>
+                        <select type="text" class="form-control-sm form-control" name="">
+                            <option selected value="">Select</option>
+                            <option value="ROAD">ROAD</option>
+                            <option value="AIR">AIR</option>
+                            <option value="TRAIN">TRAIN</option>
+                            <option value="EXPRESS">EXPRESS</option>
+                            <option value="BY HAND">BY HAND</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Billing At</span>
+                        <input type="text" class="form-control-sm form-control" name="" value="">
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Load Type</span>
+                        <select type="text" class="form-control-sm form-control" name="">
+                            <option selected value="">Select</option>
+                            <option value="09-MT-OP">09-MT-OP</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                        <span class="col-form-label-sm">Payment Terms</span>
+                        <select type="text" class="form-control-sm form-control" name="">
+                            <option selected value="CREDIT">CREDIT</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr style="border-top: 2px solid #337ab7;">
+                <div class="table-responsive">
+                    <table class='table table-sm' id="dataTable">
+                        <thead>
+                            <tr>
+                                <th scope='col'>Content</th>
+                                <th scope='col'>Name</th>
+                                <th scope='col'>Pkgs</th>
+                                <th scope='col'>Pkgs Type</th>
+                                <th scope='col'>Qty</th>
+                                <th scope='col'>Actual Wt.</th>
+                                <th scope='col'>Charge Wt.</th>
+                                <th scope='col'>Invoice No</th>
+                                <th scope='col'>Date</th>
+                                <th scope='col'>Value</th>
+                                <th scope='col'>E-Way Bill No</th>
+                                <th scope='col'>Date</th>
+                                <th scope='col'>Expiry Date</th>
+                                <th scope='col'>Shipment No</th>
+                                <th scope='col'>Remark</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for listItem in item.EWBDetails.itemList %}
+                            <tr>
+                                <!-- Content -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="content[]" ></td>
+                                <!-- Name -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="name[]" value="{{ listItem.productDesc }}"></td>
+                                <!-- Pkgs -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="pkgs[]" ></td>
+                                <!-- Pkgs Type -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="pkgs_type[]" value="{{ listItem.qtyUnit }}"></td>
+                                <!-- Qty -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="qty[]" value="{{ listItem.quantity }}"></td>
+                                <!-- Actual Wt -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="actual_wt[]" ></td>
+                                <!-- Charge Wt -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="charge_wt[]" ></td>
+                                <!-- Invoice No -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="invoice_no[]" value="{{item.EWBDetails.docNo}}"></td>
+                                <!-- Invoice Date -->
+                                <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="invoice_date[]" value="{{ item.EWBDetails.docDate|date:'Y-m-d'}}"></td>
+                                <!-- Value -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="value[]" value="{{ listItem.taxableAmount }}"></td>
+                                <!-- Eway Bill No -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="eway_bill_no[]" value="{{ item.EWBDetails.ewbNo }}"></td>
+                                <!-- Date -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="eway_bill_date[]" value="{{ item.EWBDetails.ewayBillDate }}"></td>
+                                <!-- Expiry Date -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="eway_bill_expry_date[]" value="{{ item.EWBDetails.validUpto }}"></td>
+                                <!-- Shipment No -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="shipment_no[]" ></td>
+                                <!-- Remark -->
+                                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="remark[]" ></td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">
+                                        <i class="bi bi-dash-circle"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary btn-sm m-2" onclick="addRow()">
+                        <i class="bi bi-plus-circle"></i>
+                    </button>
+                </div>
+                <script>
+                    swal("Good job!", "E-Way bill data fetch successfully!", "success")
+                </script>
+            {% elif item.ErrorMessage %}
+                <div class="row container-fluid col-12 p-0 m-0 mb-4">
+                    ErrorMessage : {{ item.ErrorMessage }} <br>
+                    <script>
+                        sweetAlert("Oops...", "{{ item.ErrorMessage }}", "error");
+                    </script>
+                </div>
+            {% endif %}
+            <div class="col-12 mt-2 mb-4">
+                <input type="submit" class="btn btn-primary btn-sm" value="Create">
+            </div>
+        </div>
+    </form>
+{% endfor %}
+
+
+<!-- if consignment from not get the data from ewbay bill portal -->
+{% if not data %}
+<form class="col-12" method="post">
+    {% csrf_token %}
+    <div class="container-fluid">
+            <div style="text-align: right;">
+                <button type="button" class="btn btn-primary btn-sm">
+                    <i class="bi bi-list"></i> List
+                </button>
+            </div>
+            <div class="row container-fluid col-12 p-0 m-0 mb-4">
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">CN No</span>
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 pr-0">
+                            <input type="text" class="form-control-sm form-control" value="12924CN" name="VNOPREFIX" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 pl-0">
+                            <input type="text" class="form-control-sm form-control text-right" name="VNOSEQ" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Date</span>
+                    <input type="date" class="form-control-sm form-control" id="dateInput" name="date">
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Consignor</span>
+                    <input type="text" class="form-control-sm form-control" required name="consignor">
+                </div>
+                
+                <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <span class="col-form-label-sm">Location</span>
+                        <input type="text" class="form-control-sm form-control" name="consignor_location">
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <span class="col-form-label-sm">GSTIN</span>
+                        <input type="text" class="form-control-sm form-control" name="consignor_gstin">
+                    </div>
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Source</span>
+                    <input type="text" class="form-control-sm form-control" name="source">
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Destination</span>
+                    <input type="text" class="form-control-sm form-control" name="destination">
+                </div>
+
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Consignee</span>
+                    <input type="text" class="form-control-sm form-control" name="consignee">
+                </div>
+                <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <span class="col-form-label-sm">Location</span>
+                        <input type="text" class="form-control-sm form-control" name="consignee_location">
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <span class="col-form-label-sm">GSTIN</span>
+                        <input type="text" class="form-control-sm form-control" name="consignee_gstin">
+                    </div>
+                </div>
+
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Delivery At</span>
+                    <select type="text" class="form-control-sm form-control" name="delivery_at">
+                        <option selected value="">Select</option>
+                        <option value="DIRECT">DIRECT</option>
+                        <option value="DOOR TO DOOR">DOOR TO DOOR</option>
+                        <option value="DOOR TO TERMINAL">DOOR TO TERMINAL</option>
+                        <option value="GODOWN">GODOWN</option>
+                        <option value="LOCAL DELIVERY">LOCAL DELIVERY</option>
+                        <option value="TERMINAL TO DOOR">TERMINAL TO DOOR</option>
+                        <option value="TERMINAL TO TERMINAL">TERMINAL TO TERMINAL</option>
+                        <option value="DIRECT">DIRECT</option>
+                    </select>
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Vehicle No</span>
+                    <input type="text" class="form-control-sm form-control" name="vehicleno">
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Billing Party</span>
+                    <input type="text" class="form-control-sm form-control" name="billing_party">
+                </div>
+                <div class="form-group p-0 m-0 row col-12 col-sm-6 col-md-3">
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <span class="col-form-label-sm">Location</span>
+                        <input type="text" class="form-control-sm form-control" name="billing_location">
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <span class="col-form-label-sm">GSTIN</span>
+                        <input type="text" class="form-control-sm form-control" name="billing_gstin">
+                    </div>
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Mode</span>
+                    <select type="text" class="form-control-sm form-control" name="mode">
+                        <option selected value="">Select</option>
+                        <option value="ROAD">ROAD</option>
+                        <option value="AIR">AIR</option>
+                        <option value="TRAIN">TRAIN</option>
+                        <option value="EXPRESS">EXPRESS</option>
+                        <option value="BY HAND">BY HAND</option>
+                    </select>
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Billing At</span>
+                    <input type="text" class="form-control-sm form-control" name="billing_at">
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Load Type</span>
+                    <select type="text" class="form-control-sm form-control" name="load_type">
+                        <option selected value="">Select</option>
+                        <option value="09-MT-OP">09-MT-OP</option>
+                    </select>
+                </div>
+                <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                    <span class="col-form-label-sm">Payment Terms</span>
+                    <select type="text" class="form-control-sm form-control" name="payment_terms">
+                        <option selected value="CREDIT">CREDIT</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr style="border-top: 2px solid #337ab7;">
+            <div class="table-responsive">
+                <table class='table table-sm' id="dataTable">
+                    <thead>
+                        <tr>
+                            <th scope='col'>Content</th>
+                            <th scope='col'>Name</th>
+                            <th scope='col'>Pkgs</th>
+                            <th scope='col'>Pkgs Type</th>
+                            <th scope='col'>Qty</th>
+                            <th scope='col'>Actual Wt.</th>
+                            <th scope='col'>Charge Wt.</th>
+                            <th scope='col'>Invoice No</th>
+                            <th scope='col'>Date</th>
+                            <th scope='col'>Value</th>
+                            <th scope='col'>E-Way Bill No</th>
+                            <th scope='col'>Date</th>
+                            <th scope='col'>Expiry Date</th>
+                            <th scope='col'>Shipment No</th>
+                            <th scope='col'>Remark</th>
+                            <th scope='col'>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- Content -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="content[]"></td>
+                            <!-- Name -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="name[]"></td>
+                            <!-- Pkgs -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="pkgs[]"></td>
+                            <!-- Pkgs Type -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="pkgs_type[]"></td>
+                            <!-- Qty -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="qty[]"></td>
+                            <!-- Actual Wt -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="actual_wt[]"></td>
+                            <!-- Charge Wt -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="charge_wt[]"></td>
+                            <!-- Invoice No -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="invoice_no[]"></td>
+                            <!-- Invoice Date -->
+                            <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="invoice_date[]"></td>
+                            <!-- Value -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="value[]"></td>
+                            <!-- Eway Bill No -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="eway_bill_no[]"></td>
+                            <!-- Date -->
+                            <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="eway_bill_date[]"></td>
+                            <!-- Expiry Date -->
+                            <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="eway_bill_expry_date[]"></td>
+                            <!-- Shipment No -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="shipment_no[]"></td>
+                            <!-- Remark -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="remark[]"></td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addRow()">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 mt-2 mb-4">
+                <input type="submit" class="btn btn-primary btn-sm" value="Create">
+            </div>
+        </div>
+    </form>
+{% endif %}
+
+<script>
+    // Get the current date
+    var currentDate = new Date().toISOString().split('T')[0];
+    console.log(currentDate);
+    // Set the value of the input element to the current date
+    document.getElementById('dateInput').value = currentDate;                
+
+    function addRow() {
+        var table = document.getElementById("dataTable");
+        var row = table.insertRow();
+        var rowContent = "";
+        rowContent += `
+        <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="content[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="name[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="pkgs[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="pkgs_type[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="qty[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="actual_wt[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 70px;" name="charge_wt[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="invoice_no[]"></td>
+        <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="invoice_date[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 100px;" name="value[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="eway_bill_no[]"></td>
+        <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="eway_bill_date[]"></td>
+        <td><input type="date" class="form-control-sm form-control" style="width: 100px;" name="eway_bill_expry_date[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="shipment_no[]"></td>
+        <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="remark[]"></td>
+        <td>
+            <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">
+                <i class="bi bi-dash-circle"></i>
+            </button>
+        </td>
+        `;
+        row.innerHTML = rowContent;
+    }
+    function deleteRow(btn) {
+        var table = document.getElementById("dataTable");
+        var row = btn.parentNode.parentNode;
+        
+        // Check if there's only one row remaining
+        if (table.rows.length > 2) { // 2 because of header row
+            row.parentNode.removeChild(row);
+        } else {
+            // If only one row remains, hide the delete button
+            var deleteButton = row.querySelector('button');
+            if (deleteButton) {
+                deleteButton.style.display = 'none';
+            }
+        }
+    }
+    
+</script>
+
+
+{% endblock %}

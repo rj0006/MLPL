@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-0v9-(2+qc-#1jkm2--h28@0s%3oy2x^4#41&1ipg6dgwrj_op=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Added manually
 CORS_ALLOWED_ORIGINS = [
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'accounts',
     'master',
     'chatApp',
+    'inlinetableform'
 ]
 
 MIDDLEWARE = [
@@ -73,24 +74,24 @@ WSGI_APPLICATION = 'MLPL.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'MLPL',
-        'HOST': 'JANGRA\\MSSQLSERVER01',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'Trusted_Connection': 'yes',
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'MLPL',
+#         'HOST': 'JANGRA\\MSSQLSERVER01',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#             'Trusted_Connection': 'yes',
+#         },
+#     },
+# }
 print('Connection make successfull : ', DATABASES)
 
 
@@ -128,8 +129,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+import os
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

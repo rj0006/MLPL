@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>{{ page }}</title>
   <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png">
   <style>
@@ -49,8 +50,19 @@
             aria-haspopup="true" aria-expanded="false">Operations</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/operations/consignment/">Consignment</a>
+            <a class="dropdown-item" href="/operations/get_ewaybill/">Consignment (With E-WAY BILL)</a>
             <a class="dropdown-item" href="#">Manifest</a>
             <a class="dropdown-item" href="#">Vehicle Hire</a>
+          </div>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Tracking</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/operations/consignment_tracking/">Consignment Tracking</a>
+            <a class="dropdown-item" href="#">Eway Bill Tracking</a>
+            <!-- <a class="dropdown-item" href="#">Vehicle Hire</a> -->
           </div>
           </a>
         </li>

@@ -38,7 +38,8 @@
             </div>
             <div class="form-group m-0 col-12 col-sm-6 col-md-6">
                 <span class="col-form-label-sm">Party Name</span>
-                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toUpperCase();" name="partyname">
+                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toUpperCase();"
+                    name="partyname">
             </div>
             <div class="form-group m-0 col-12 col-sm-6 col-md-3">
                 <span class="col-form-label-sm">Controlling Branch</span>
@@ -47,133 +48,6 @@
             <div class="form-group m-0 col-12 col-sm-6 col-md-3">
                 <span class="col-form-label-sm">Parent Account</span>
                 <input type="text" class="form-control-sm form-control" name="parentaccount">
-            </div>
-
-
-            <div class="mt-3 col-12 col-sm-12 col-md-12">
-                <b>Contact</b>
-                <hr class="m-0">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Address</span>
-                <input type="text" class="form-control-sm form-control" name="address">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">City</span>
-                <input type="text" class="form-control-sm form-control" name="city">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">State</span>
-                <input type="text" class="form-control-sm form-control" name="state">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">PIN</span>
-                <input type="text" class="form-control-sm form-control" maxlength="6" name="pin">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Country</span>
-                <input type="text" class="form-control-sm form-control" name="country">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Contact Person</span>
-                <input type="text" class="form-control-sm form-control" name="contactperson">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Mobile</span>
-                <input type="text" class="form-control-sm form-control" maxlength="10" name="mobilenumber">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Email</span>
-                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toLowerCase();" name="email">
-            </div>
-
-            <div class="mt-3 col-12 col-sm-12 col-md-12">
-                <b>MLPL Cordinator Contact</b>
-                <hr class="m-0">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Name</span>
-                <input type="text" class="form-control-sm form-control" id="nameco" onkeyup="this.value = this.value.toUpperCase();" name="nameco">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Mobile</span>
-                <input type="text" class="form-control-sm form-control" maxlength="10" name="mobileco">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Department</span>
-                <input type="text" class="form-control-sm form-control" name="departmentco">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Branch</span>
-                <input type="text" class="form-control-sm form-control" name="branchco">
-            </div>
-
-            <div class="mt-3 col-12 col-sm-12 col-md-12">
-                <b>GST</b>
-                <hr class="m-0">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Registration Type</span>
-                <select type="text" class="form-control-sm form-control" name="registrationtype">
-                    <option value="">Select</option>
-                    <option value="Registered-Regular">Registered-Regular</option>
-                    <option value="Unregistered">Unregistered</option>
-                    <option value="Consumer">Consumer</option>
-                    <option value="SEZ Without Payment">SEZ Without Payment</option>
-                    <option value="UIN Holder">UIN Holder</option>
-                </select>
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Service Type</span>
-                <select type="text" class="form-control-sm form-control" name="servicetype">
-                    <option value="">Select</option>
-                    <option value="GOODS">GOODS</option>
-                    <option value="SERVICE">SERVICE</option>
-                </select>
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-6 row">
-                <div class="m-0 pl-0 col-6 col-sm-6 col-md-6">
-                    <span class="col-form-label-sm">GSTIN</span>
-                    <input type="text" class="form-control-sm form-control text-uppercase" maxlength="15" name="gstin"
-                    onkeyup="this.value = this.value.toUpperCase();">
-                </div>
-                <div class="m-0 pr-0 pt-4 col-6 col-sm-6 col-md-6">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="gstinverify">
-                    <label class="col-form-label-sm" for="flexCheckDefault">I have verified the GSTIN from site</label>
-                </div>
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">PAN</span>
-                <input type="text" class="form-control-sm form-control text-uppercase" maxlength="10" name="pan"
-                    pattern="[A-Za-z0-9]+" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">TDS Deducation</span>
-                <input type="number" class="form-control-sm form-control" name="tdsdeducation">
-            </div>
-
-            <div class="form-group m-0 col-12 col-sm-6 col-md-6 row">
-                <div class="m-0 pl-0 col-6 col-sm-6 col-md-6">
-                    <span class="col-form-label-sm">Turnover over 5 CR any financial</span>
-                <select type="text" class="form-control-sm form-control" name="turnoverfivecr">
-                    <option value="">Select</option>
-                    <option value="YES">YES</option>
-                    <option value="NO">NO</option>
-                </select>
-                </div>
-                <div class="m-0 pr-0 pt-4 col-6 col-sm-6 col-md-6">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" name="declarationsubmit">
-                    <label class="col-form-label-sm" for="flexCheckDefault1">Is Declaraiton Submit</label>
-                </div>
-            </div>
-
-            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
-                <span class="col-form-label-sm">Einvoice Applicable</span>
-                <select type="text" class="form-control-sm form-control" name="einvoiceapli">
-                    <option value="">Select</option>
-                    <option value="YES">YES</option>
-                    <option value="NO">NO</option>
-                </select>
             </div>
         </div>
     </form>
@@ -187,7 +61,7 @@
         $("#nameco").autocomplete({
             source: function (request, response) {
                 $.ajax({
-                    url: "/administrations/get_party_list/",  // URL to your Django view
+                    url: "/administrations/get_user_list/",  // URL to your Django view
                     data: {
                         search: request.term
                     },
@@ -218,6 +92,386 @@
             }
         });
     });
+</script>
+
+<div>
+    <div class="tablink" onclick="openCity('General', this, 'red')" id="defaultOpen">General</div>
+    <div class="tablink" onclick="openCity('Contact', this, 'green')">Contact Person</div>
+    <div class="tablink" onclick="openCity('Address', this, 'blue')">GST and Address</div>
+    <div class="tablink" onclick="openCity('Payment', this, 'orange')">Payment Terms</div>
+    <div class="tablink" onclick="openCity('Attachments', this, 'orange')">Attachments</div>
+
+    <div id="General" class="tabcontent">
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Name</span>
+                <input type="text" class="form-control-sm form-control" name="contactperson">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Mobile</span>
+                <input type="text" class="form-control-sm form-control" maxlength="10" name="mobilenumber">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Email</span>
+                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toLowerCase();"
+                    name="email">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Website</span>
+                <input type="text" class="form-control-sm form-control" name="website">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">User ID</span>
+                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toLowerCase();"
+                    name="userid">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Password</span>
+                <input type="password" class="form-control-sm form-control" name="password">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Type of Business</span>
+                <input type="text" class="form-control-sm form-control" name="typeofbusiness">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Remark</span>
+                <input type="text" class="form-control-sm form-control" name="general_remark">
+            </div>
+        </div>
+    </div>
+    <div id="Contact" class="tabcontent">
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Name</span>
+                <input type="text" class="form-control-sm form-control" id="nameco"
+                    onkeyup="this.value = this.value.toUpperCase();" name="nameco">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Mobile</span>
+                <input type="text" class="form-control-sm form-control" maxlength="10" name="mobileco">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Department</span>
+                <input type="text" class="form-control-sm form-control" name="departmentco">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Branch</span>
+                <input type="text" class="form-control-sm form-control" name="branchco">
+            </div>
+        </div>
+    </div>
+
+    <!-- GST & Address -->
+    <div id="Address" class="tabcontent">
+        <div class="table-responsive">
+            <table class='table table-sm' id="dataTable">
+                <thead>
+                    <tr>
+                        <th scope='col'>State</th>
+                        <th scope='col'>GSTIN</th>
+                        <th scope='col'>Registration Type</th>
+                        <th scope='col'>Default GST</th>
+                        <th scope='col'>Service Type</th>
+                        <th scope='col'>Address Details</th>
+                        <th scope='col'>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- State -->
+                        <td><input type="text" class="form-control-sm form-control" style="width: 150px;"
+                                onkeyup="this.value = this.value.toUpperCase();" name="state[]"></td>
+                        <!-- GSTIN -->
+                        <td><input type="text" class="form-control-sm form-control" style="width: 150px;"
+                                onkeyup="this.value = this.value.toUpperCase();" name="gstin[]"></td>
+                        <!-- Registration Type -->
+                        <td>
+                            <select type="text" class="form-control-sm form-control" style="width: 150px;"
+                                name="registration_type[]">
+                                <option value="">Select</option>
+                                <option value="Registered-Regular">Registered-Regular</option>
+                                <option value="Unregistered">Unregistered</option>
+                                <option value="Consumer">Consumer</option>
+                                <option value="SEZ Without Payment">SEZ Without Payment</option>
+                                <option value="UIN Holder">UIN Holder</option>
+                            </select>
+                        </td>
+                        <!-- Default GST -->
+                        <td><input type="text" class="form-control-sm form-control" style="width: 150px;"
+                                name="default_gst[]"></td>
+                        <!-- Service Type -->
+                        <td>
+                            <select type="text" class="form-control-sm form-control" style="width: 150px;"
+                                name="service_type[]">
+                                <option value="">Select</option>
+                                <option value="1">GOODS</option>
+                                <option value="2">SERVICE</option>
+                            </select>
+                        </td>
+                        <!-- Address Detail -->
+                        <td>
+
+
+                            <div class="table-responsive">
+                                <table class="table table-sm" id="dataTable1">
+                                    <thead>
+                                        <tr>
+                                            <th scope='col'>Warehouse Code</th>
+                                            <th scope='col'>Address</th>
+                                            <th scope='col'>City</th>
+                                            <th scope='col'>PIN Code</th>
+                                            <th scope='col'>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Code -->
+                                        <td><input type="text" class="form-control-sm form-control"
+                                                style="width: 150px;" name="warehouse_code[]"></td>
+                                        <!-- Address -->
+                                        <td><input type="text" class="form-control-sm form-control"
+                                                style="width: 150px;" name="gst_address[]"></td>
+                                        <!-- City -->
+                                        <td><input type="text" class="form-control-sm form-control"
+                                                style="width: 150px;" name="gst_city[]"></td>
+                                        <!-- PIN Code -->
+                                        <td><input type="text" class="form-control-sm form-control"
+                                                style="width: 150px;" name="gst_pin_code[]"></td>
+                                        <!-- Action -->
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm"
+                                                onclick="addAddressDetail(this)">
+                                                <i class="bi bi-plus-circle"></i>
+                                            </button>
+                                        </td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                        <!-- Action -->
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" onclick="GstDetailAddRow()">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <script>
+        function GstDetailAddRow() {
+            var table = document.getElementById("dataTable");
+            var row = table.insertRow();
+            var rowContent = "";
+            rowContent += `
+            <!-- State -->
+            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" onkeyup="this.value = this.value.toUpperCase();" name="state[]" ></td>
+            <!-- GSTIN -->
+            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" onkeyup="this.value = this.value.toUpperCase();" name="gstin[]"></td>
+            <!-- Registration Type -->
+            <td>
+                <select type="text" class="form-control-sm form-control" style="width: 150px;" name="registration_type[]">
+                    <option value="">Select</option>
+                    <option value="Registered-Regular">Registered-Regular</option>
+                    <option value="Unregistered">Unregistered</option>
+                    <option value="Consumer">Consumer</option>
+                    <option value="SEZ Without Payment">SEZ Without Payment</option>
+                    <option value="UIN Holder">UIN Holder</option>
+                </select>
+            </td>
+            <!-- Default GST -->
+            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="default_gst[]"></td>
+            <!-- Service Type -->
+            <td>
+                <select type="text" class="form-control-sm form-control" style="width: 150px;" name="service_type[]">
+                    <option value="">Select</option>
+                    <option value="1">GOODS</option>
+                    <option value="2">SERVICE</option>
+                </select>
+            </td>
+            <!-- Address Detail -->
+            <td>
+
+                <div class="table-responsive">
+                    <table class="table table-sm" id="dataTable2">
+                        <thead>
+                            <tr>
+                                <th scope='col'>Warehouse Code</th>
+                                <th scope='col'>Address</th>
+                                <th scope='col'>City</th>
+                                <th scope='col'>PIN Code</th>
+                                <th scope='col'>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Code -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="warehouse_code[]" ></td>
+                            <!-- Address -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_address[]"></td>
+                            <!-- City -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_city[]" ></td>
+                            <!-- PIN Code -->
+                            <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_pin_code[]"></td>
+                            <!-- Action -->
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addNewAddressDetail(this)">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button> 
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </td>
+            <!-- Action -->
+            <td>
+                <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">
+                    <i class="bi bi-dash-circle"></i>
+                </button>
+            </td>
+            `;
+            row.innerHTML = rowContent;
+
+        }
+
+        function addNewAddressDetail(button) {
+            var table = button.closest(".dataTable2");
+            var newRow = table.insertRow();
+            var rowAddressContent = "";
+            rowAddressContent = `
+                <!-- Code -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="warehouse_code[]" ></td>
+                <!-- Address -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_address[]"></td>
+                <!-- City -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_city[]" ></td>
+                <!-- PIN Code -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_pin_code[]"></td>
+                <!-- Action -->
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">
+                        <i class="bi bi-dash-circle"></i>
+                    </button>
+                </td>`;
+            newRow.innerHTML = rowAddressContent;
+        }
+
+        function addAddressDetail() {
+            console.log('addAddressDetail', addAddressDetail)
+            var table = document.getElementById("dataTable1");
+            var addressRow = table.insertRow();
+            var addressRowContent = "";
+            addressRowContent += `
+                <!-- Code -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="warehouse_code[]" ></td>
+                <!-- Address -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_address[]"></td>
+                <!-- City -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_city[]" ></td>
+                <!-- PIN Code -->
+                <td><input type="text" class="form-control-sm form-control" style="width: 150px;" name="gst_pin_code[]"></td>
+                <!-- Action -->
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">
+                        <i class="bi bi-dash-circle"></i>
+                    </button>
+                </td>
+            `;
+            addressRow.innerHTML = addressRowContent;
+        }
+
+
+        function deleteRow(button) {
+            var row = button.parentElement.parentElement;
+            row.remove();
+        }
+    </script>
+    <div id="Payment" class="tabcontent">
+        <h1>Payment Terms</h1>
+        <p>Oslo is the capital of Norway.</p>
+    </div>
+    <div class="tabcontent" id="Attachments">
+        <h1>Attachments</h1>
+        <p>Attach you party documents</p>
+    </div>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            role="tab" aria-controls="home" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+            role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+            role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Home</div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div>
+</div>
+
+<style>
+    /* Style the tab buttons */
+    .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: 1px solid white;
+        outline: none;
+        cursor: pointer;
+        padding: 6px 10px;
+        /* font-size: 17px; */
+        width: 20%;
+    }
+
+    /* Change background color of buttons on hover */
+    .tablink:hover {
+        background-color: #777;
+    }
+
+    /* Set default styles for tab content */
+    .tabcontent {
+        /* color: white; */
+        display: none;
+        /* padding: 50px; */
+        /* text-align: center; */
+    }
+
+    /* Style each tab content individually
+    #General {background-color:red;}
+    #Contact {background-color:green;}
+    #Address {background-color:blue;}
+    #Payment {background-color:orange;} */
+</style>
+
+<script>
+    function openCity(cityName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        // Show the specific tab content
+        document.getElementById(cityName).style.display = "block";
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = '#777';
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
 </script>
 
 {% endblock %}

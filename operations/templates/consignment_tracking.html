@@ -1,0 +1,67 @@
+{% extends 'operation_nav/navbar.html' %}
+{% block start %}
+
+<div class="contrainer-fluid">
+    <form id="consignmentTrackingForm" class="col-12" method="post">
+        {% csrf_token %}
+        <div class="col-12">
+            <b>Track Consignment</b>
+        </div>
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Enter CN</span>
+                <input type="text" id="consignmentNo" class="form-control-sm form-control" required name="consignmentNo"
+                    onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="col-12 mt-2">
+                <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+                <a href="/operations/consignment_tracking/">
+                    <input type="reset" class="btn btn-primary btn-sm" value="Discard">
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% for detail in cnmt_detail %}
+    <div class="container-fluid table-responsive-sm">
+        <table class='table table-sm'> 
+            <tbody>
+                <tr>
+                    <th scope='col'>Consignment No</th> 
+                    <th scope='col'>Date</th>
+                    <th scope='col'>Delivery At</th>
+                    <th scope='col'>MODE</th>
+                    <th scope="col">Vehicle No</th>
+                    <th scope='col'>Package</th>
+                    <th scope='col'>Weight</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td scope='row'> {{ detail.CNNO }}</td>
+                    <td>{{ detail.VDATE }}</td> 
+                    <td>{{ detail.DELIVERYAT }}</td>
+                    <td>{{ detail.MODE }}</td>
+                    <td>{{ detail.VEHICLE }}</td>
+                    <td>{{ detail.PKGS }}</td>
+                    <td>{{ detail.WEIGHT }}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td scope='row'> <b> From </b> <br>{{ detail.CONSIGNOR }}<br>{{ detail.FROMSTATION }}</td>
+                    <td> <b> To </b> <br>{{ detail.CONSIGNEE }}<br>{{ detail.TOSTATION }}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td colspan='6'><b>Statuts : </b>{{ detail.STATUS }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endfor %}
+
+{% endblock %}

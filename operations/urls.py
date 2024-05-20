@@ -3,6 +3,8 @@ from operations import views
 
 urlpatterns = [
     path('', views.operation, name='operation'),
-    path('consignment/', views.create_consignment_with_invoices, name='consignment_list'),
+    path('consignment/', views.consignment, name='consignment'),
+    path('get_ewaybill/', views.get_ewaybill, name='get_ewaybill'),
+    path('consignment_tracking/', views.consignment_tracking, name='consignment-tracking'),
     
 ]

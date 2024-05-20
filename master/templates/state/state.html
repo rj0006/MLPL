@@ -1,0 +1,66 @@
+{% extends 'navbar.html' %}
+{% block start %}
+
+<div class="contrainer-fluid">
+    <form class="col-12" method="post">
+        {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-12">
+                <b>State/create</b>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+                <a href="/master/statelist/"><input type="button" class="btn btn-primary btn-sm" value="List"></a>
+                <input type="reset" class="btn btn-primary btn-sm" value="Discard">
+            </div>
+        </div>
+        <div class="row container-fluid col-12 p-0 m-0 mb-4">
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Name</span>
+                <input type="text" class="form-control-sm form-control" required onkeyup="this.value = this.value.toUpperCase();" name="name">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Code</span>
+                <input type="text" class="form-control-sm form-control" name="code">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">GST Code</span>
+                <input type="text" class="form-control-sm form-control" name="gstcode">
+            </div>
+
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">GSTIN</span>
+                <input type="text" class="form-control-sm form-control" onkeyup="this.value = this.value.toUpperCase();" name="gstin">
+            </div>
+            
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">Country</span>
+                <select type="text" class="form-control-sm form-control" name="country">
+                    <option value="">Select</option>
+                    <option value="India">INDIA</option>
+                </select>
+            </div>
+
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">From PIN</span>
+                <input type="text" class="form-control-sm form-control" name="frompin">
+            </div>
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm">To PIN</span>
+                <input type="text" class="form-control-sm form-control" name="topin">
+            </div>
+
+            <div class="form-group m-0 col-12 col-sm-6 col-md-3">
+                <span class="col-form-label-sm"> &nbsp; </span>
+                <div style="padding-right: 0;">
+                    <a href="https://docs.cleartax.in/cleartax-docs/e-invoicing-api/e-invoicing-api-reference/resources-and-master/pincode-state-mapping-pattern" target="_blank" id="IfscPattern">
+                        Pattern
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}

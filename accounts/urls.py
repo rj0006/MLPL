@@ -9,5 +9,4 @@ urlpatterns = [
     # http://127.0.0.1:8000/accounts/get_names/?search=har (har is search key)
     path('get_names/', views.get_names, name='get_names'),
 
-    # Add other URL patterns as needed
 ]

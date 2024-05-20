@@ -15,8 +15,6 @@ def navbar(request):
 # @login_required(login_url='/')
 def users(request):
     userPage = {'page':'User Master'}
-
-
     if request.method == 'POST':
         data = request.POST
 
